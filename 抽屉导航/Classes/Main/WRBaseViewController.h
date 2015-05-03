@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WRBaseViewController.h
 //  抽屉导航
 //
 //  Created by WR on 15-5-2.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WRBaseViewController : UIViewController
 
 @end
-
