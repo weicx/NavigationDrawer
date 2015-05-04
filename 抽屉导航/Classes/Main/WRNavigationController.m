@@ -7,11 +7,6 @@
 //
 
 #import "WRNavigationController.h"
-#import "UIView+Extension.h"
-
-#define MENU_WIDTH             260
-#define LEFT_DEVIDE_DISTANCE   40
-#define RIGHT_DEVIDE_DISTANCE  220
 
 @interface WRNavigationController () 
 
@@ -48,9 +43,9 @@
 - (void)contentDrag:(UIPanGestureRecognizer *)pan {
     
     CGPoint transform = [pan translationInView:pan.view];
-    //    NSLog(@"------- %f", transform.x);
-    if (transform.x < 0 && self.view.x == 0) return;
-    
+    if (self.view.x < 0) {
+        self.view.x = 0;
+    }
     self.view.transform = CGAffineTransformTranslate(self.view.transform, transform.x, 0);
     [pan setTranslation:CGPointZero inView:pan.view];// 每当平移完成后将手势的translation清空
     
@@ -77,7 +72,9 @@
 #pragma mark - 抽屉打开
 - (void)openMenuView {
     
-    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:ANIMATION_DURATION delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        
+//        self.view.transform = CGAffineTransformIdentity;
         self.view.x = MENU_WIDTH;
     } completion:^(BOOL finished) {
         self.isopen = YES;
@@ -86,7 +83,9 @@
 #pragma mark - 抽屉关闭
 - (void)closeMenuView {
     
-    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:ANIMATION_DURATION delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        // 注意：由于在拖拽的时候改变了视图的transform，所以必须在抽屉打开或者关闭的时候将transform复原到初始位置（重置）。因为后面搜索视图切换时还会用到这个视图的初始位置做其他事情，不在这里复原会导致后面出现一些诡异错误！！！
+        self.view.transform = CGAffineTransformIdentity;
         self.view.x = 0;
     } completion:^(BOOL finished) {
         self.isopen = NO;

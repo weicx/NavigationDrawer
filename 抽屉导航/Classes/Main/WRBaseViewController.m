@@ -8,13 +8,9 @@
 
 #import "WRBaseViewController.h"
 #import "WRMenuViewController.h"
-#import "WRNavigationController.h"
 #import "WRHomeViewController.h"
 #import "WRMineViewController.h"
 #import "WRSettingViewController.h"
-#import "UIView+Extension.h"
-
-#define MENU_WIDTH  260
 
 @interface WRBaseViewController () <WRMenuViewControllerDelegete>
 

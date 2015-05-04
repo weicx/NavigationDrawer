@@ -20,9 +20,7 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
 }
-
 
 #pragma mark - Table view data source
 

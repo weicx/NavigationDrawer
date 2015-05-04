@@ -1,0 +1,27 @@
+//
+//  PrefixHeader.pch
+//  抽屉导航
+//
+//  Created by WR on 15-5-5.
+//  Copyright (c) 2015年 WR. All rights reserved.
+//
+
+#ifndef _____PrefixHeader_pch
+#define _____PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#endif
+
+
+#ifdef __OBJC__
+
+#import "UIView+Extension.h"
+#import "WRNavigationController.h"
+
+#define MENU_WIDTH             260
+#define LEFT_DEVIDE_DISTANCE   40
+#define RIGHT_DEVIDE_DISTANCE  220
+#define ANIMATION_DURATION     0.3
+
+#endif

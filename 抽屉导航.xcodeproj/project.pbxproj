@@ -57,6 +57,7 @@
 		1FA39EE11AF5F68C00880F87 /* WRMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRMenuViewController.m; sourceTree = "<group>"; };
 		1FA39EE21AF5F68C00880F87 /* WRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRNavigationController.h; sourceTree = "<group>"; };
 		1FA39EE31AF5F68C00880F87 /* WRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRNavigationController.m; sourceTree = "<group>"; };
+		1FA978B31AF7D51D007E9FA1 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1FACA9831AF5FB6900F559A8 /* WRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRHomeViewController.h; sourceTree = "<group>"; };
 		1FACA9841AF5FB6900F559A8 /* WRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WRHomeViewController.m; sourceTree = "<group>"; };
 		1FACA98E1AF6017E00F559A8 /* WRMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WRMineViewController.h; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 			children = (
 				1F8C218C1AF528F500E800CA /* Images.xcassets */,
 				1F8C21801AF528F500E800CA /* Info.plist */,
+				1FA978B31AF7D51D007E9FA1 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -443,6 +445,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/抽屉导航/PrefixHeader.pch";
 				INFOPLIST_FILE = "抽屉导航/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -453,6 +456,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/抽屉导航/PrefixHeader.pch";
 				INFOPLIST_FILE = "抽屉导航/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
