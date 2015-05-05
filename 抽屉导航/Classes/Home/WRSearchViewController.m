@@ -23,7 +23,6 @@
     
     [self setup];
 }
-// 初始化
 - (void)setup {
 
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"btn_search_hl"]];
@@ -38,7 +37,6 @@
 }
 
 #pragma mark - Events
-// Pan手势回调
 - (void)searchViewDrag:(UIPanGestureRecognizer *)pan {
     
     CGPoint transform = [pan translationInView:pan.view];
@@ -51,7 +49,7 @@
             
             [UIView animateWithDuration:ANIMATION_DURATION animations:^{
                 self.view.x = 0;
-                // 复原
+                
                 self.lastView.transform = CGAffineTransformIdentity;
             } completion:^(BOOL finished) {
                 // 移除、清空遮盖
@@ -63,13 +61,13 @@
             [self.view endEditing:YES];
             [UIView animateWithDuration:ANIMATION_DURATION animations:^{
                 self.view.x = self.view.width;
-                // 复原
+                
                 self.lastView.transform = CGAffineTransformIdentity;
                 self.bgView.alpha = 0;
             } completion:^(BOOL finished) {
                 [self.view removeFromSuperview];
                 [self.bgView removeFromSuperview];
-                self.bgView = nil;// 记得要将“遮盖”清空
+                self.bgView = nil;// 将“遮盖”清空
             }];
         }
     } else {// 正在拖拽
@@ -84,7 +82,6 @@
 
 - (IBAction)cancel:(UIButton *)sender {
     
-    // 发送“取消”按钮被点击通知
     [[NSNotificationCenter defaultCenter] postNotificationName:@"SearchCancel" object:nil];
 }
 

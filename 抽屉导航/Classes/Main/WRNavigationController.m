@@ -84,7 +84,7 @@
 - (void)closeMenuView {
     
     [UIView animateWithDuration:ANIMATION_DURATION delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        // 注意：由于在拖拽的时候改变了视图的transform，所以必须在抽屉打开或者关闭的时候将transform复原到初始位置（重置）。因为后面搜索视图切换时还会用到这个视图的初始位置做其他事情，不在这里复原会导致后面出现一些诡异错误！！！
+        // 在拖拽的时候改变了视图的transform，需将transform复原到初始位置（重置）
         self.view.transform = CGAffineTransformIdentity;
         self.view.x = 0;
     } completion:^(BOOL finished) {
